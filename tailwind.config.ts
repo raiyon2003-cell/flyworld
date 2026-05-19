@@ -69,6 +69,54 @@ const config: Config = {
         shimmer: {
           "100%": { transform: "translateX(100%)" },
         },
+        "ambient-drift": {
+          "0%, 100%": { transform: "translate(0, 0)" },
+          "50%": { transform: "translate(1.5%, -1%)" },
+        },
+        "cloud-a": {
+          "0%, 100%": { transform: "translateX(0)" },
+          "50%": { transform: "translateX(3.5%)" },
+        },
+        "cloud-b": {
+          "0%, 100%": { transform: "translateX(0)" },
+          "50%": { transform: "translateX(-4%)" },
+        },
+        "cloud-c": {
+          "0%, 100%": { transform: "translateX(0) translateY(0)" },
+          "50%": { transform: "translateX(2.5%) translateY(-5px)" },
+        },
+        "fly-slow": {
+          "0%": { transform: "translate3d(-12vw, 0, 0)", opacity: "0" },
+          "12%": { opacity: "0.4" },
+          "88%": { opacity: "0.4" },
+          "100%": { transform: "translate3d(112vw, 0, 0)", opacity: "0" },
+        },
+        "fly-slow-rev": {
+          "0%": { transform: "translate3d(12vw, 0, 0)", opacity: "0" },
+          "12%": { opacity: "0.32" },
+          "88%": { opacity: "0.32" },
+          "100%": { transform: "translate3d(-112vw, 0, 0)", opacity: "0" },
+        },
+        "road-line": {
+          "0%": { backgroundPosition: "0 0" },
+          "100%": { backgroundPosition: "48px 0" },
+        },
+        "road-glow": {
+          "0%, 100%": { opacity: "0.35" },
+          "50%": { opacity: "0.72" },
+        },
+        "car-a": {
+          "0%": { transform: "translate3d(-8vw, 0, 0)", opacity: "0" },
+          "8%": { opacity: "0.88" },
+          "92%": { opacity: "0.88" },
+          "100%": { transform: "translate3d(105vw, 0, 0)", opacity: "0" },
+        },
+        "car-b": {
+          "0%": { transform: "translate3d(92vw, 0, 0)", opacity: "0" },
+          "8%": { opacity: "0.78" },
+          "92%": { opacity: "0.78" },
+          "100%": { transform: "translate3d(-12vw, 0, 0)", opacity: "0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -76,6 +124,17 @@ const config: Config = {
         float: "float 6s ease-in-out infinite",
         "float-delayed": "float 7s ease-in-out infinite 1s",
         shimmer: "shimmer 1.5s infinite",
+        "ambient-drift": "ambient-drift 32s ease-in-out infinite",
+        "cloud-a": "cloud-a 34s ease-in-out infinite",
+        "cloud-b": "cloud-b 40s ease-in-out infinite",
+        "cloud-c": "cloud-c 28s ease-in-out infinite",
+        "fly-slow": "fly-slow 54s linear infinite",
+        "fly-slow-rev": "fly-slow-rev 68s linear infinite",
+        "fly-slow-delayed": "fly-slow 62s linear infinite 20s",
+        "road-line": "road-line 22s linear infinite",
+        "road-glow": "road-glow 7s ease-in-out infinite",
+        "car-a": "car-a 16s ease-in-out infinite",
+        "car-b": "car-b 19s ease-in-out infinite -4s",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

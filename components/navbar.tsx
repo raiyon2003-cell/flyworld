@@ -24,6 +24,8 @@ const links = [
   { href: "/contact", label: "Contact" },
 ];
 
+const phoneNumbers = ["+442081504583", "+442080445158"] as const;
+
 export function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = React.useState(false);
@@ -68,10 +70,18 @@ export function Navbar() {
 
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <div className="hidden items-center gap-2 sm:flex">
-            <Button variant="ghost" className="rounded-xl font-semibold">
-              Login
-            </Button>
+          <div className="hidden items-center gap-3 sm:flex">
+            <div className="flex flex-col items-end gap-0.5 text-right">
+              {phoneNumbers.map((num) => (
+                <a
+                  key={num}
+                  href={`tel:${num.replace(/\s/g, "")}`}
+                  className="text-xs font-semibold leading-tight text-foreground/90 underline-offset-4 transition-colors hover:text-primary hover:underline sm:text-sm"
+                >
+                  {num}
+                </a>
+              ))}
+            </div>
             <Button variant="premium" className="rounded-xl px-5 font-semibold">
               Sign up
             </Button>
@@ -100,10 +110,21 @@ export function Navbar() {
                     {link.label}
                   </Link>
                 ))}
-                <div className="mt-6 grid gap-2 border-t border-white/10 pt-6">
-                  <Button variant="outline" className="rounded-xl">
-                    Login
-                  </Button>
+                <div className="mt-6 grid gap-3 border-t border-white/10 pt-6">
+                  <div className="flex flex-col gap-1.5 px-1">
+                    <p className="text-xs font-bold uppercase tracking-wide text-muted-foreground">
+                      Phone
+                    </p>
+                    {phoneNumbers.map((num) => (
+                      <a
+                        key={num}
+                        href={`tel:${num.replace(/\s/g, "")}`}
+                        className="text-sm font-semibold text-foreground transition-colors hover:text-primary"
+                      >
+                        {num}
+                      </a>
+                    ))}
+                  </div>
                   <Button variant="premium" className="rounded-xl">
                     Sign up
                   </Button>

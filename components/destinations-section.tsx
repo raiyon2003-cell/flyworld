@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { DESTINATIONS } from "@/data/destinations";
+import { SectionAtmosphere } from "@/components/ambient/section-atmosphere";
 import { Button } from "@/components/ui/button";
 import { DestinationCard } from "@/components/destination-card";
 
@@ -14,9 +15,10 @@ export function DestinationsSection() {
       id="destinations"
       className="relative isolate overflow-hidden py-20 sm:py-28"
     >
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background via-muted/40 to-background dark:via-muted/15" />
+      <SectionAtmosphere />
+      <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-background via-muted/40 to-background dark:via-muted/15" />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative z-[2] mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <motion.div
             initial={{ opacity: 0, y: 18 }}

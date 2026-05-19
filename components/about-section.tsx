@@ -3,12 +3,18 @@
 import { motion } from "framer-motion";
 import { Building2, Radar, Rocket } from "lucide-react";
 
+import { SectionAtmosphere } from "@/components/ambient/section-atmosphere";
+
 export function AboutSection() {
   return (
-    <section id="about" className="relative isolate py-20 sm:py-28">
-      <div className="pointer-events-none absolute inset-x-10 top-0 -z-10 h-64 rounded-full bg-gradient-to-r from-primary/25 via-accent/25 to-sky-400/25 blur-3xl" />
+    <section
+      id="about"
+      className="relative isolate overflow-hidden py-20 sm:py-28"
+    >
+      <SectionAtmosphere />
+      <div className="pointer-events-none absolute inset-x-10 top-0 z-[1] h-64 rounded-full bg-gradient-to-r from-primary/25 via-accent/25 to-amber-400/20 blur-3xl" />
 
-      <div className="mx-auto grid max-w-7xl gap-14 px-4 lg:grid-cols-[1.1fr_0.9fr] lg:items-center sm:px-6 lg:px-8">
+      <div className="relative z-[2] mx-auto grid max-w-7xl gap-14 px-4 lg:grid-cols-[1.1fr_0.9fr] lg:items-center sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, x: -18 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -49,9 +55,10 @@ export function AboutSection() {
                 key={item.title}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ y: -3 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: index * 0.06 }}
-                className="flex gap-4 rounded-[1.5rem] border border-white/15 bg-card/70 p-5 shadow-lg backdrop-blur-xl dark:border-white/10"
+                className="flex gap-4 rounded-[1.5rem] border border-white/15 bg-card/70 p-5 shadow-lg backdrop-blur-xl transition-shadow duration-300 hover:shadow-xl dark:border-white/10"
               >
                 <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-accent text-primary-foreground shadow-md">
                   <item.icon className="h-6 w-6" />
@@ -72,7 +79,8 @@ export function AboutSection() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="glass-card relative overflow-hidden rounded-[2rem] border-white/15 p-10 shadow-2xl dark:border-white/10"
+          whileHover={{ y: -4 }}
+          className="glass-card relative overflow-hidden rounded-[2rem] border-white/15 p-10 shadow-2xl transition-shadow duration-300 hover:shadow-[0_24px_70px_rgba(0,0,0,0.12)] dark:border-white/10 dark:hover:shadow-[0_24px_70px_rgba(0,0,0,0.45)]"
         >
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-primary/25 via-transparent to-accent/25" />
           <div className="relative space-y-6">

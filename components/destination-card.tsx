@@ -22,7 +22,8 @@ export function DestinationCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.45, delay: index * 0.06 }}
-      className="group relative overflow-hidden rounded-[1.75rem] border border-white/15 bg-card shadow-xl backdrop-blur-xl dark:border-white/10"
+      whileHover={{ y: -6 }}
+      className="group relative overflow-hidden rounded-[1.75rem] border border-white/15 bg-card shadow-xl backdrop-blur-xl transition-shadow duration-300 hover:shadow-2xl dark:border-white/10"
     >
       <div className="relative h-56 w-full overflow-hidden">
         <Image

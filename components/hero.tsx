@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Compass, Globe2, ShieldCheck, Sparkles } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { HeroAtmosphere } from "@/components/ambient/hero-atmosphere";
 
 export function Hero() {
   return (
@@ -25,7 +26,11 @@ export function Hero() {
         />
       </div>
 
-      <div className="relative mx-auto flex max-w-7xl flex-col gap-12 px-4 sm:px-6 lg:flex-row lg:items-center lg:gap-16 lg:px-8">
+      <HeroAtmosphere />
+
+      <div className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-b from-slate-950/35 via-slate-950/10 to-slate-950/55 dark:from-slate-950/50 dark:via-slate-950/20 dark:to-slate-950/70" />
+
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col gap-12 px-4 sm:px-6 lg:flex-row lg:items-center lg:gap-16 lg:px-8">
         <div className="max-w-3xl flex-1">
           <motion.div
             initial={{ opacity: 0, y: 14 }}
@@ -44,7 +49,7 @@ export function Hero() {
             className="mt-6 font-display text-4xl font-black tracking-tight text-white drop-shadow-sm sm:text-5xl lg:text-6xl"
           >
             Find Cheap Flights{" "}
-            <span className="bg-gradient-to-r from-white via-sky-100 to-indigo-100 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-white via-amber-100 to-emerald-100 bg-clip-text text-transparent">
               Worldwide
             </span>
           </motion.h1>
@@ -104,17 +109,19 @@ export function Hero() {
                 icon: Compass,
                 body: "From weekend hops to around-the-world itineraries.",
               },
-            ].map((item, i) => (
-              <div
+            ].map((item) => (
+              <motion.div
                 key={item.title}
-                className="rounded-2xl border border-white/20 bg-white/10 p-4 text-white shadow-lg backdrop-blur-xl dark:border-white/10 dark:bg-black/30"
+                whileHover={{ y: -4 }}
+                transition={{ type: "spring", stiffness: 420, damping: 28 }}
+                className="rounded-2xl border border-white/20 bg-white/10 p-4 text-white shadow-lg backdrop-blur-xl transition-shadow duration-300 hover:shadow-2xl dark:border-white/10 dark:bg-black/30"
               >
                 <item.icon className="h-5 w-5 text-white/90" />
                 <p className="mt-3 text-sm font-bold">{item.title}</p>
                 <p className="mt-1 text-xs leading-relaxed text-white/80">
                   {item.body}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </motion.div>
         </div>
@@ -128,7 +135,7 @@ export function Hero() {
           <motion.div
             animate={{ y: [0, -12, 0] }}
             transition={{ repeat: Infinity, duration: 7, ease: "easeInOut" }}
-            className="glass-panel relative overflow-hidden rounded-[2rem] border-white/25 bg-white/10 p-6 shadow-2xl backdrop-blur-2xl dark:border-white/10 dark:bg-black/35"
+            className="glass-panel relative overflow-hidden rounded-[2rem] border-white/25 bg-white/10 p-6 shadow-2xl backdrop-blur-2xl transition-shadow duration-300 hover:shadow-[0_28px_90px_rgba(0,0,0,0.28)] dark:border-white/10 dark:bg-black/35"
           >
             <div className="flex items-center justify-between">
               <div>

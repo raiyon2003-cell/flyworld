@@ -34,7 +34,7 @@ export function FlightCard({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35, delay: index * 0.05 }}
       className={cn(
-        "group relative overflow-hidden rounded-2xl border border-white/15 bg-gradient-to-br from-card/90 via-card/70 to-card/40 p-5 shadow-lg backdrop-blur-xl transition-all hover:-translate-y-0.5 hover:shadow-2xl dark:border-white/10 dark:from-card/70 dark:via-card/50 dark:to-card/30",
+        "group relative overflow-hidden rounded-2xl border border-white/15 bg-gradient-to-br from-card/90 via-card/70 to-card/40 p-5 shadow-lg backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:scale-[1.01] hover:shadow-2xl motion-reduce:hover:scale-100 dark:border-white/10 dark:from-card/70 dark:via-card/50 dark:to-card/30",
       )}
     >
       <div className="pointer-events-none absolute inset-0 opacity-60 transition-opacity group-hover:opacity-90">

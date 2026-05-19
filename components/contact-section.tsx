@@ -73,7 +73,11 @@ export function ContactSection({ embedded = true }: { embedded?: boolean }) {
                 <p className="text-xs uppercase tracking-wide text-muted-foreground">
                   Phone
                 </p>
-                <p className="font-semibold">+1 (415) 555-0199</p>
+                <p className="font-semibold">
+                  +442081504583
+                  <br />
+                  +442080445158
+                </p>
               </div>
             </div>
             <div className="flex gap-4">

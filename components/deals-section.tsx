@@ -13,7 +13,7 @@ export function DealsSection() {
   return (
     <section id="deals" className="relative isolate py-20 sm:py-28">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(99,102,241,0.16),_transparent_55%)] dark:bg-[radial-gradient(circle_at_top,_rgba(129,140,248,0.18),_transparent_55%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_hsl(var(--primary)_/_0.12),_transparent_55%)] dark:bg-[radial-gradient(circle_at_top,_hsl(var(--primary)_/_0.16),_transparent_55%)]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -58,19 +58,22 @@ export function DealsSection() {
               transition={{ duration: 0.5, delay: index * 0.07 }}
               whileHover={{ y: -6 }}
               className={cn(
-                "relative overflow-hidden rounded-[1.75rem] border border-white/15 p-8 text-white shadow-2xl backdrop-blur-xl dark:border-white/10",
+                "relative overflow-hidden rounded-[1.75rem] border border-white/20 p-8 text-white shadow-2xl dark:border-white/15",
                 "bg-gradient-to-br",
                 deal.gradient,
               )}
             >
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.35),_transparent_55%)] opacity-70 mix-blend-screen" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/12 via-transparent to-black/35" />
+              <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
               <div className="relative flex flex-col gap-5">
-                <Badge className="w-fit rounded-full bg-black/25 px-3 py-1 text-[11px] uppercase tracking-wide text-white backdrop-blur-md">
+                <Badge className="w-fit rounded-full bg-black/40 px-3 py-1 text-[11px] uppercase tracking-wide text-white backdrop-blur-md">
                   {deal.badge}
                 </Badge>
                 <div>
-                  <h3 className="font-display text-2xl font-black">{deal.title}</h3>
-                  <p className="mt-3 max-w-md text-sm leading-relaxed text-white/85">
+                  <h3 className="font-display text-2xl font-black text-white drop-shadow-sm">
+                    {deal.title}
+                  </h3>
+                  <p className="mt-3 max-w-md text-sm leading-relaxed text-white/90">
                     {deal.description}
                   </p>
                 </div>

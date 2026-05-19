@@ -7,7 +7,7 @@ import { WHY_US } from "@/data/why-us";
 export function WhyChooseSection() {
   return (
     <section id="why-us" className="relative isolate py-20 sm:py-28">
-      <div className="pointer-events-none absolute inset-x-0 top-1/3 -z-10 h-72 bg-gradient-to-r from-primary/15 via-accent/15 to-sky-400/15 blur-3xl" />
+      <div className="pointer-events-none absolute inset-x-0 top-1/3 -z-10 h-72 bg-gradient-to-r from-primary/15 via-accent/15 to-amber-400/12 blur-3xl" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
