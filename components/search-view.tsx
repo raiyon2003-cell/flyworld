@@ -2,6 +2,7 @@
 
 import * as React from "react";
 
+import type { BookingSearchContext } from "@/lib/booking-types";
 import type { CabinClass, TripType } from "@/lib/types";
 import { generateMockFlights } from "@/data/flights";
 import { FlightResults } from "@/components/flight-results";
@@ -49,13 +50,28 @@ export function SearchView({
     };
   }, [params]);
 
-  const flights = React.useMemo(() => {
-    return generateMockFlights({
+  const searchContext = React.useMemo<BookingSearchContext>(() => {
+    const paxRaw = pickParam(params.pax);
+    const pax = paxRaw ? Number.parseInt(paxRaw, 10) : 1;
+    return {
       from: pickParam(params.from),
       to: pickParam(params.to),
+      depart: pickParam(params.depart),
+      return: pickParam(params.return),
+      trip: parseTrip(pickParam(params.trip)),
+      cabin: parseCabin(pickParam(params.cabin)),
+      pax: Number.isFinite(pax) && pax > 0 ? Math.min(9, pax) : 1,
       seed: serialized,
-    });
+    };
   }, [params, serialized]);
+
+  const flights = React.useMemo(() => {
+    return generateMockFlights({
+      from: searchContext.from,
+      to: searchContext.to,
+      seed: searchContext.seed,
+    });
+  }, [searchContext]);
 
   const [loading, setLoading] = React.useState(true);
 
@@ -91,7 +107,11 @@ export function SearchView({
           initialValues={initialValues}
         />
 
-        <FlightResults flights={flights} loading={loading} />
+        <FlightResults
+          flights={flights}
+          loading={loading}
+          searchContext={searchContext}
+        />
       </div>
     </div>
   );

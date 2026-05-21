@@ -1,12 +1,14 @@
 import {
-  BadgePercent,
-  Earth,
+  Award,
   Headphones,
   Plane,
+  RefreshCw,
   ShieldCheck,
-  Undo2,
+  Sparkles,
+  Wallet,
+  Zap,
+  type LucideIcon,
 } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
 
 export interface WhyUsItem {
   title: string;
@@ -16,33 +18,51 @@ export interface WhyUsItem {
 
 export const WHY_US: WhyUsItem[] = [
   {
-    title: "Best Prices",
-    description: "Meta-search across hundreds of carriers with fee-transparent totals.",
-    icon: BadgePercent,
+    title: "Best Price Guarantee",
+    description:
+      "Found it cheaper elsewhere? We'll match it and give you £25 off. No hidden fees, ever.",
+    icon: Wallet,
   },
   {
-    title: "Secure Booking",
-    description: "PCI-aligned flows, modern encryption, and fraud monitoring.",
+    title: "ATOL Protected",
+    description:
+      "Every package holiday fully ATOL protected. Complete financial security and peace of mind.",
     icon: ShieldCheck,
   },
   {
-    title: "24/7 Support",
-    description: "Human agents and AI assistants ready wherever you fly.",
+    title: "24/7 Expert Support",
+    description:
+      "Travel experts available around the clock by phone, chat, or email — wherever you are.",
     icon: Headphones,
   },
   {
-    title: "Easy Refunds",
-    description: "Clear refundable fares and guided change workflows.",
-    icon: Undo2,
+    title: "Flexible Cancellation",
+    description:
+      "Plans change. Free amendments and hassle-free cancellations on most bookings up to 24 hours before.",
+    icon: RefreshCw,
   },
   {
-    title: "Global Flights",
-    description: "Intercontinental routes with smart layover suggestions.",
-    icon: Earth,
-  },
-  {
-    title: "Trusted by Travelers",
-    description: "Millions of searches monthly from explorers and road warriors.",
+    title: "500+ Airlines",
+    description:
+      "Access to 500+ airlines worldwide — from budget carriers to premium business class lounges.",
     icon: Plane,
+  },
+  {
+    title: "Curated Experiences",
+    description:
+      "Every deal hand-selected by our team. No algorithm, no filler — just the best experiences.",
+    icon: Sparkles,
+  },
+  {
+    title: "Instant Booking",
+    description:
+      "Book in under 3 minutes with instant confirmation. E-tickets land in your inbox immediately.",
+    icon: Zap,
+  },
+  {
+    title: "Award-Winning",
+    description:
+      "UK Travel Agency of the Year 2023 & 2024. Trusted by over 2 million travellers.",
+    icon: Award,
   },
 ];

@@ -7,31 +7,15 @@ export const DESTINATIONS: Destination[] = [
     country: "United Arab Emirates",
     image:
       "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=900&q=80",
-    priceFrom: 329,
+    priceFrom: 349,
   },
   {
-    slug: "london",
-    city: "London",
-    country: "United Kingdom",
+    slug: "maldives",
+    city: "Maldives",
+    country: "Indian Ocean",
     image:
-      "https://images.unsplash.com/photo-1513635269975-596864e8d71b?w=900&q=80",
-    priceFrom: 412,
-  },
-  {
-    slug: "paris",
-    city: "Paris",
-    country: "France",
-    image:
-      "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=900&q=80",
-    priceFrom: 389,
-  },
-  {
-    slug: "istanbul",
-    city: "Istanbul",
-    country: "Turkey",
-    image:
-      "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=900&q=80",
-    priceFrom: 276,
+      "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=900&q=80",
+    priceFrom: 899,
   },
   {
     slug: "new-york",
@@ -39,7 +23,23 @@ export const DESTINATIONS: Destination[] = [
     country: "United States",
     image:
       "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=900&q=80",
-    priceFrom: 498,
+    priceFrom: 399,
+  },
+  {
+    slug: "santorini",
+    city: "Santorini",
+    country: "Greece",
+    image:
+      "https://images.unsplash.com/photo-1613395877344-13d4a8e0d325?w=900&q=80",
+    priceFrom: 459,
+  },
+  {
+    slug: "paris",
+    city: "Paris",
+    country: "France",
+    image:
+      "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=900&q=80",
+    priceFrom: 149,
   },
   {
     slug: "tokyo",
@@ -47,6 +47,30 @@ export const DESTINATIONS: Destination[] = [
     country: "Japan",
     image:
       "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=900&q=80",
-    priceFrom: 589,
+    priceFrom: 649,
+  },
+  {
+    slug: "bangkok",
+    city: "Bangkok",
+    country: "Thailand",
+    image:
+      "https://images.unsplash.com/photo-1528183429752-a97d0bf99b5a?w=900&q=80",
+    priceFrom: 419,
+  },
+  {
+    slug: "bali",
+    city: "Bali",
+    country: "Indonesia",
+    image:
+      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=900&q=80",
+    priceFrom: 849,
+  },
+  {
+    slug: "london",
+    city: "London",
+    country: "United Kingdom",
+    image:
+      "https://images.unsplash.com/photo-1526129318478-62ed807ebdf9?w=900&q=80",
+    priceFrom: 89,
   },
 ];

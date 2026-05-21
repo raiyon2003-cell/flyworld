@@ -3,7 +3,9 @@
 import * as React from "react";
 import { Filter, SlidersHorizontal, Sparkles, Zap } from "lucide-react";
 
+import type { BookingSearchContext } from "@/lib/booking-types";
 import type { MockFlight } from "@/lib/types";
+import { formatGbp } from "@/lib/format";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -57,15 +59,17 @@ export function FlightResultsSkeleton({ rows = 5 }: { rows?: number }) {
 export function FlightResults({
   flights,
   loading,
+  searchContext,
 }: {
   flights: MockFlight[];
   loading?: boolean;
+  searchContext?: BookingSearchContext;
 }) {
   const [sortBy, setSortBy] = React.useState<SortMode>("best");
 
   const bounds = React.useMemo(() => {
     if (!flights.length) return { min: 0, max: 1000 };
-    const prices = flights.map((f) => f.priceUsd);
+    const prices = flights.map((f) => f.priceGbp);
     const rawMin = Math.min(...prices);
     const rawMax = Math.max(...prices);
     const max = rawMax <= rawMin ? rawMin + 120 : rawMax;
@@ -107,7 +111,7 @@ export function FlightResults({
 
   const filtered = React.useMemo(() => {
     return flights.filter((f) => {
-      if (f.priceUsd < priceRange[0] || f.priceUsd > priceRange[1]) return false;
+      if (f.priceGbp < priceRange[0] || f.priceGbp > priceRange[1]) return false;
       if (blockedAirlines.has(f.airlineName)) return false;
       if (stopsFilter === "nonstop" && f.stops !== 0) return false;
       if (stopsFilter === "one" && f.stops !== 1) return false;
@@ -134,7 +138,7 @@ export function FlightResults({
 
   const sorted = React.useMemo(() => {
     const copy = [...filtered];
-    if (sortBy === "cheapest") copy.sort((a, b) => a.priceUsd - b.priceUsd);
+    if (sortBy === "cheapest") copy.sort((a, b) => a.priceGbp - b.priceGbp);
     else if (sortBy === "fastest")
       copy.sort((a, b) => a.durationMinutes - b.durationMinutes);
     else copy.sort((a, b) => b.score - a.score);
@@ -202,7 +206,7 @@ export function FlightResults({
 
             <div className="space-y-3">
               <Label className="text-xs uppercase text-muted-foreground">
-                Price range (USD)
+                Price range (GBP)
               </Label>
               <Slider
                 min={bounds.min}
@@ -213,8 +217,8 @@ export function FlightResults({
                 disabled={loading || !flights.length}
               />
               <div className="flex justify-between text-xs text-muted-foreground">
-                <span>${priceRange[0]}</span>
-                <span>${priceRange[1]}</span>
+                <span>{formatGbp(priceRange[0], { compact: true })}</span>
+                <span>{formatGbp(priceRange[1], { compact: true })}</span>
               </div>
             </div>
 
@@ -341,7 +345,12 @@ export function FlightResults({
           ) : (
             <div className="space-y-4">
               {sorted.map((f, i) => (
-                <FlightCard key={f.id} flight={f} index={i} />
+                <FlightCard
+                  key={f.id}
+                  flight={f}
+                  index={i}
+                  searchContext={searchContext}
+                />
               ))}
             </div>
           )}

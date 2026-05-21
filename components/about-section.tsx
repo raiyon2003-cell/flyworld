@@ -89,7 +89,7 @@ export function AboutSection() {
                 Affordable travel
               </p>
               <p className="mt-3 font-display text-4xl font-black tracking-tight">
-                $180M+
+                £180M+
               </p>
               <p className="text-sm text-muted-foreground">
                 illustrative traveler savings unlocked (concept metric).

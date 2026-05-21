@@ -28,14 +28,14 @@ export function DestinationsSection() {
             className="max-w-2xl"
           >
             <p className="text-xs font-bold uppercase tracking-[0.22em] text-primary">
-              Popular destinations
+              Explore the World
             </p>
             <h2 className="mt-3 font-display text-3xl font-black tracking-tight md:text-4xl">
-              Discover where travelers are booking right now
+              Popular Destinations
             </h2>
             <p className="mt-4 text-muted-foreground">
-              Immersive cards, tactile hover states, and realistic starting fares —
-              tuned for conversion without feeling salesy.
+              Golden deserts to turquoise lagoons — discover the world&apos;s most
+              breathtaking places.
             </p>
           </motion.div>
 

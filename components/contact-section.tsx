@@ -35,14 +35,14 @@ export function ContactSection({ embedded = true }: { embedded?: boolean }) {
           className="mx-auto max-w-3xl text-center"
         >
           <p className="text-xs font-bold uppercase tracking-[0.26em] text-primary">
-            Contact
+            We&apos;re Here to Help
           </p>
           <h2 className="mt-4 font-display text-3xl font-black tracking-tight md:text-4xl">
-            Let&apos;s architect your next adventure
+            Get in Touch
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Enterprise-grade form UX with optimistic motion — hook this up to your
-            CRM later without redesigning the layout.
+            Questions, bookings, or travel inspiration — our expert team is available
+            24/7 to help plan your perfect journey.
           </p>
         </motion.div>
 
@@ -63,6 +63,7 @@ export function ContactSection({ embedded = true }: { embedded?: boolean }) {
                   Support email
                 </p>
                 <p className="font-semibold">hello@flyworld.travel</p>
+                <p className="text-xs text-muted-foreground">Response within 2 hours</p>
               </div>
             </div>
             <div className="flex gap-4">
@@ -86,13 +87,18 @@ export function ContactSection({ embedded = true }: { embedded?: boolean }) {
               </div>
               <div>
                 <p className="text-xs uppercase tracking-wide text-muted-foreground">
-                  Headquarters
+                  London (Head Office)
                 </p>
                 <p className="font-semibold">
-                  500 Howard Street, Floor 12
+                  Travel Sun Ltd
                   <br />
-                  San Francisco, CA 94105
+                  86-90 Paul Street
+                  <br />
+                  London, UK
+                  <br />
+                  EC2A 4NE
                 </p>
+                <p className="mt-1 text-xs text-muted-foreground">Mon–Sat 9am–6pm</p>
               </div>
             </div>
           </motion.div>

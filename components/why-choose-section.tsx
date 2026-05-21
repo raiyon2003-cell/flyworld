@@ -21,11 +21,11 @@ export function WhyChooseSection() {
             Why FlyWorld
           </p>
           <h2 className="mt-4 font-display text-3xl font-black tracking-tight md:text-4xl">
-            Everything you expect from a serious travel platform
+            Travel Smarter With Us
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Six pillars we obsess over — so you spend less time comparing tabs and
-            more time boarding.
+            Cutting-edge technology meets human expertise — seamless travel for every
+            budget.
           </p>
         </motion.div>
 

@@ -6,58 +6,58 @@
 
 @layer base {
   :root {
-    --background: 40 36% 97%;
-    --foreground: 160 32% 11%;
+    --background: 210 25% 98%;
+    --foreground: 222 52% 11%;
     --card: 0 0% 100%;
-    --card-foreground: 160 32% 11%;
+    --card-foreground: 222 52% 11%;
     --popover: 0 0% 100%;
-    --popover-foreground: 160 32% 11%;
-    --primary: 158 64% 34%;
-    --primary-foreground: 40 40% 98%;
-    --secondary: 38 32% 92%;
-    --secondary-foreground: 160 32% 11%;
-    --muted: 38 24% 93%;
-    --muted-foreground: 160 12% 38%;
-    --accent: 38 92% 50%;
-    --accent-foreground: 26 88% 12%;
+    --popover-foreground: 222 52% 11%;
+    --primary: 222 48% 18%;
+    --primary-foreground: 195 40% 98%;
+    --secondary: 210 22% 94%;
+    --secondary-foreground: 222 52% 11%;
+    --muted: 210 20% 94%;
+    --muted-foreground: 220 12% 40%;
+    --accent: 188 72% 38%;
+    --accent-foreground: 195 100% 99%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
-    --border: 35 20% 86%;
-    --input: 35 20% 86%;
-    --ring: 158 64% 34%;
+    --border: 215 18% 86%;
+    --input: 215 18% 86%;
+    --ring: 188 72% 38%;
     --radius: 0.875rem;
-    --hero-start: 158 58% 38%;
-    --hero-mid: 38 88% 52%;
-    --hero-end: 12 76% 48%;
-    --glass: 0 0% 100% / 0.55;
-    --glass-border: 0 0% 100% / 0.35;
+    --hero-start: 222 50% 22%;
+    --hero-mid: 200 45% 32%;
+    --hero-end: 188 55% 40%;
+    --glass: 0 0% 100% / 0.58;
+    --glass-border: 215 25% 88% / 0.9;
   }
 
   .dark {
-    --background: 158 28% 7%;
-    --foreground: 40 36% 96%;
-    --card: 158 22% 11%;
-    --card-foreground: 40 36% 96%;
-    --popover: 158 22% 11%;
-    --popover-foreground: 40 36% 96%;
-    --primary: 158 55% 48%;
-    --primary-foreground: 158 28% 7%;
-    --secondary: 158 18% 16%;
-    --secondary-foreground: 40 36% 96%;
-    --muted: 158 16% 18%;
-    --muted-foreground: 38 18% 72%;
-    --accent: 38 88% 54%;
-    --accent-foreground: 26 88% 10%;
+    --background: 222 44% 7%;
+    --foreground: 210 25% 96%;
+    --card: 222 38% 11%;
+    --card-foreground: 210 25% 96%;
+    --popover: 222 38% 11%;
+    --popover-foreground: 210 25% 96%;
+    --primary: 188 58% 48%;
+    --primary-foreground: 222 44% 8%;
+    --secondary: 222 28% 16%;
+    --secondary-foreground: 210 25% 96%;
+    --muted: 222 24% 17%;
+    --muted-foreground: 215 18% 68%;
+    --accent: 188 50% 42%;
+    --accent-foreground: 195 100% 98%;
     --destructive: 0 72% 52%;
     --destructive-foreground: 210 40% 98%;
-    --border: 158 16% 20%;
-    --input: 158 16% 20%;
-    --ring: 158 55% 52%;
-    --hero-start: 158 45% 22%;
-    --hero-mid: 32 55% 28%;
-    --hero-end: 12 55% 26%;
-    --glass: 158 22% 11% / 0.72;
-    --glass-border: 40 40% 98% / 0.1;
+    --border: 222 24% 20%;
+    --input: 222 24% 20%;
+    --ring: 188 58% 48%;
+    --hero-start: 222 44% 12%;
+    --hero-mid: 222 38% 10%;
+    --hero-end: 188 40% 28%;
+    --glass: 222 38% 11% / 0.75;
+    --glass-border: 210 30% 96% / 0.1;
   }
 }
 
@@ -85,7 +85,7 @@
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-primary via-accent to-amber-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary via-accent to-cyan-500 bg-clip-text text-transparent;
   }
 
   .mesh-bg {
@@ -112,7 +112,58 @@
 
 @media (prefers-reduced-motion: reduce) {
   .hero-route-a,
-  .hero-route-b {
+  .hero-route-b,
+  .whatsapp-float,
+  .whatsapp-pulse-ring,
+  .whatsapp-enter {
     animation: none;
   }
+}
+
+@keyframes whatsapp-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes whatsapp-pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  70% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+@keyframes whatsapp-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.6) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.whatsapp-float {
+  animation: whatsapp-float 3s ease-in-out infinite;
+}
+
+.whatsapp-pulse-ring {
+  animation: whatsapp-pulse-ring 2s ease-out infinite;
+}
+
+.whatsapp-enter {
+  animation: whatsapp-enter 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }

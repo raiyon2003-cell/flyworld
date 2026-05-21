@@ -20,18 +20,17 @@ export function Testimonials() {
           className="mx-auto max-w-3xl text-center"
         >
           <p className="text-xs font-bold uppercase tracking-[0.26em] text-primary">
-            Traveler stories
+            Real Stories
           </p>
           <h2 className="mt-4 font-display text-3xl font-black tracking-tight md:text-4xl">
-            Loved by explorers, founders, and frequent flyers
+            What Our Travellers Say
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Social proof cards with tactile glass layers — ready for your marketing
-            site or investor deck.
+            Join 2 million+ satisfied travellers who trust FlyWorld for every journey.
           </p>
         </motion.div>
 
-        <div className="mt-14 grid gap-8 lg:grid-cols-3">
+        <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {TESTIMONIALS.map((t, index) => (
             <motion.article
               key={t.id}

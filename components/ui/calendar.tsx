@@ -3,27 +3,51 @@
 import * as React from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { DayPicker } from "react-day-picker";
+import { enGB } from "date-fns/locale";
 
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 
-export type CalendarProps = React.ComponentProps<typeof DayPicker>;
+/** Always use Gregorian (en-GB) — avoids system Hijri/other calendar locales */
+const GREGORIAN_LOCALE = enGB;
+
+export type CalendarProps = React.ComponentProps<typeof DayPicker> & {
+  fromYear?: number;
+  toYear?: number;
+};
 
 function Calendar({
   className,
   classNames,
   showOutsideDays = true,
+  locale = GREGORIAN_LOCALE,
+  captionLayout = "dropdown-buttons",
+  fromYear,
+  toYear,
   ...props
 }: CalendarProps) {
+  const currentYear = new Date().getFullYear();
+  const resolvedFromYear = fromYear ?? currentYear - 1;
+  const resolvedToYear = toYear ?? currentYear + 2;
+
   return (
     <DayPicker
+      locale={locale}
+      captionLayout={captionLayout}
+      fromYear={resolvedFromYear}
+      toYear={resolvedToYear}
       showOutsideDays={showOutsideDays}
       className={cn("p-3", className)}
       classNames={{
         months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
         month: "space-y-4",
-        caption: "flex justify-center pt-1 relative items-center",
-        caption_label: "text-sm font-semibold",
+        caption: "flex justify-center pt-1 relative items-center gap-1",
+        caption_label: "hidden",
+        caption_dropdowns: "flex items-center gap-2",
+        dropdown:
+          "rounded-lg border border-input bg-background px-2 py-1.5 text-sm font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-ring",
+        dropdown_month: "rounded-lg border border-input bg-background",
+        dropdown_year: "rounded-lg border border-input bg-background",
         nav: "space-x-1 flex items-center",
         nav_button: cn(
           buttonVariants({ variant: "outline" }),

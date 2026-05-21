@@ -7,6 +7,7 @@ import "./globals.css";
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 import { ThemeProvider } from "@/components/providers/theme-provider";
+import { WhatsAppFloat } from "@/components/whatsapp-float";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,11 +21,11 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: {
-    default: "FlyWorld · Cheap flights worldwide",
-    template: "%s · FlyWorld",
+    default: "Fly World · Premium Last-Minute Flights & Holidays",
+    template: "%s · Fly World",
   },
   description:
-    "Compare thousands of flights with FlyWorld — a premium Next.js travel frontend inspired by Skyscanner.",
+    "Discover extraordinary last-minute flights and holiday packages across 500+ destinations. ATOL protected, best price guarantee, 24/7 UK support.",
 };
 
 export default function RootLayout({
@@ -39,6 +40,7 @@ export default function RootLayout({
           <Navbar />
           <main className="min-h-[70vh]">{children}</main>
           <Footer />
+          <WhatsAppFloat />
         </ThemeProvider>
       </body>
     </html>

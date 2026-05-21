@@ -1,9 +1,13 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Briefcase, ShieldCheck } from "lucide-react";
 
+import { buildBookingHref, persistBookingFlight } from "@/lib/booking";
+import type { BookingSearchContext } from "@/lib/booking-types";
 import type { MockFlight } from "@/lib/types";
+import { formatGbp } from "@/lib/format";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -23,10 +27,19 @@ function stopsLabel(stops: number): string {
 export function FlightCard({
   flight,
   index = 0,
+  searchContext,
 }: {
   flight: MockFlight;
   index?: number;
+  searchContext?: BookingSearchContext;
 }) {
+  const bookHref = searchContext
+    ? buildBookingHref(flight, searchContext)
+    : `/book?flightId=${encodeURIComponent(flight.id)}&pax=1`;
+
+  const handleBookClick = () => {
+    if (searchContext) persistBookingFlight(flight, searchContext);
+  };
   return (
     <motion.article
       layout
@@ -113,12 +126,14 @@ export function FlightCard({
             <div>
               <p className="text-xs text-muted-foreground">Total from</p>
               <p className="font-display text-3xl font-black tracking-tight">
-                ${flight.priceUsd}
+                {formatGbp(flight.priceGbp)}
               </p>
-              <p className="text-[11px] text-muted-foreground">USD · incl. taxes*</p>
+              <p className="text-[11px] text-muted-foreground">GBP · incl. taxes*</p>
             </div>
-            <Button variant="premium" className="rounded-xl shadow-lg">
-              Book now
+            <Button asChild variant="premium" className="rounded-xl shadow-lg">
+              <Link href={bookHref} onClick={handleBookClick}>
+                Book now
+              </Link>
             </Button>
           </div>
           <p className="flex items-center gap-1 text-[11px] text-muted-foreground">

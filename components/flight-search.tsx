@@ -248,7 +248,7 @@ export function FlightSearch({
   return (
     <motion.div
       layout
-      initial={{ opacity: 0, y: 24 }}
+      initial={false}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
       className={cn("relative mx-auto w-full max-w-6xl", className)}
@@ -438,6 +438,7 @@ export function FlightSearch({
                       />
                       <DatePickerField
                         label="Date"
+                        mode="travel"
                         date={leg.date}
                         onChange={(d) => updateLeg(leg.id, { date: d })}
                         disabled={(date) =>
@@ -559,6 +560,7 @@ function ClassicRouteFields({
       >
         <DatePickerField
           label="Departure date"
+          mode="travel"
           date={departureDate}
           onChange={setDepartureDate}
           disabled={(date) => isBefore(date, startOfDay(new Date()))}
@@ -566,6 +568,7 @@ function ClassicRouteFields({
         {showReturn && (
           <DatePickerField
             label="Return date"
+            mode="travel"
             date={returnDate}
             onChange={setReturnDate}
             disabled={(date) =>

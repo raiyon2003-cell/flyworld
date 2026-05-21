@@ -64,7 +64,7 @@ export function generateMockFlights(params: {
   return order.map((airline, i) => {
     const stops = i % 4 === 0 ? 0 : i % 3;
     const durationMinutes = randInt(rng, 320, 920) + stops * 90;
-    const priceUsd = basePrice + i * 37 + stops * 55 + randInt(rng, 0, 40);
+    const priceGbp = basePrice + i * 37 + stops * 55 + randInt(rng, 0, 40);
 
     return {
       id: `${seed}-${airline.code}-${i}`,
@@ -76,14 +76,14 @@ export function generateMockFlights(params: {
       arrivalTime: `${String((14 + i) % 24).padStart(2, "0")}:${i % 3 === 0 ? "20" : "05"}`,
       durationMinutes,
       stops,
-      priceUsd,
+      priceGbp,
       flightNumber: `${airline.code} ${100 + i * 17}`,
       baggage:
         i % 2 === 0
           ? "2 pc checked · Carry-on included"
           : "1 pc checked · Carry-on included",
       refundable: i % 3 !== 0,
-      score: flightScore(priceUsd, durationMinutes, stops),
+      score: flightScore(priceGbp, durationMinutes, stops),
     };
   });
 }

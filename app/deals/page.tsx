@@ -27,19 +27,19 @@ export default function DealsPage() {
 
         <div className="max-w-3xl space-y-4">
           <p className="text-xs font-bold uppercase tracking-[0.26em] text-primary">
-            FlyWorld Deals Desk
+            Limited Time Only
           </p>
           <h1 className="font-display text-4xl font-black tracking-tight md:text-5xl">
-            Offers engineered for spontaneous travelers
+            Exclusive Deals & Offers
           </h1>
           <p className="text-lg text-muted-foreground">
-            Browse rotating promotions — each tile animates with depth so your brand
-            feels alive while staying enterprise-clean.
+            Hand-picked bargains updated daily — last-minute deals, flash sales and
+            exclusive member discounts.
           </p>
         </div>
       </div>
 
-      <DealsSection />
+      <DealsSection showAll />
     </div>
   );
 }

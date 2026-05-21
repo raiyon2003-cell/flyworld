@@ -29,7 +29,8 @@ export interface MockFlight {
   arrivalTime: string;
   durationMinutes: number;
   stops: number;
-  priceUsd: number;
+  /** Total in GBP (whole pounds) for mock display */
+  priceGbp: number;
   flightNumber: string;
   baggage: string;
   refundable: boolean;
@@ -41,6 +42,7 @@ export interface Destination {
   city: string;
   country: string;
   image: string;
+  /** Lowest “from” price in GBP (whole pounds) */
   priceFrom: number;
 }
 
@@ -49,7 +51,18 @@ export interface Deal {
   title: string;
   description: string;
   badge: string;
+  /** Tailwind gradient stops (from/via/to) — applied via deal-card map for JIT */
   gradient: string;
+  /** Optional hero photo (Unsplash) */
+  image?: string;
+  country: string;
+  flag: string;
+  priceWas: number;
+  priceNow: number;
+  nights: number;
+  stars: number;
+  flightType: "Direct" | "1 Stop";
+  featured?: boolean;
 }
 
 export interface Testimonial {

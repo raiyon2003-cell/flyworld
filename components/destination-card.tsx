@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, MapPin } from "lucide-react";
 
 import type { Destination } from "@/lib/types";
+import { formatGbpPp } from "@/lib/format";
 import { Button } from "@/components/ui/button";
 
 export function DestinationCard({
@@ -48,7 +49,7 @@ export function DestinationCard({
             <p className="text-[11px] uppercase tracking-wide text-white/70">
               From
             </p>
-            <p className="text-lg font-black">${destination.priceFrom}</p>
+            <p className="text-lg font-black">{formatGbpPp(destination.priceFrom)}</p>
           </div>
         </div>
       </div>
@@ -83,9 +84,12 @@ function slugToAirport(slug: string): string {
     dubai: "DXB",
     london: "LHR",
     paris: "CDG",
-    istanbul: "IST",
     "new-york": "JFK",
     tokyo: "NRT",
+    maldives: "MLE",
+    santorini: "JTR",
+    bangkok: "BKK",
+    bali: "DPS",
   };
   return map[slug] ?? "LHR";
 }

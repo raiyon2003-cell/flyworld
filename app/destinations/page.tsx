@@ -28,14 +28,14 @@ export default function DestinationsPage() {
 
         <header className="max-w-3xl space-y-4">
           <p className="text-xs font-bold uppercase tracking-[0.26em] text-primary">
-            Destinations
+            Explore the World
           </p>
           <h1 className="font-display text-4xl font-black tracking-tight md:text-5xl">
-            Cities travelers can&apos;t stop searching
+            500+ Destinations
           </h1>
           <p className="text-lg text-muted-foreground">
-            Editorial-grade imagery, tactile hover zoom, and sharp typography —
-            perfect for marketing squads who care about craft.
+            From the arctic to the equator — discover your perfect destination and
+            plan your next unforgettable journey.
           </p>
         </header>
 

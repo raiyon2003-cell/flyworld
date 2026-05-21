@@ -2,6 +2,30 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   darkMode: ["class"],
+  safelist: [
+    // Deal card gradients (must match DEAL_GRADIENTS in deal-card.tsx)
+    "from-slate-950",
+    "via-rose-950",
+    "to-red-950",
+    "from-emerald-950",
+    "via-teal-950",
+    "to-cyan-950",
+    "from-zinc-950",
+    "via-slate-900",
+    "to-blue-950",
+    "from-amber-950",
+    "via-orange-950",
+    "to-amber-900",
+    "from-teal-950",
+    "via-emerald-950",
+    "to-green-950",
+    "from-cyan-950",
+    "via-blue-950",
+    "to-indigo-950",
+    "from-stone-950",
+    "to-orange-950",
+    "to-yellow-950",
+  ],
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
