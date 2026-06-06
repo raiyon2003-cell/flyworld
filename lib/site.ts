@@ -6,7 +6,7 @@ export const SITE = {
     number: "+442080445158",
     url: "https://wa.me/442080445158",
   },
-  email: "hello@flyworld.travel",
+  email: "info@flyworld.live",
   supportHours: {
     weekdays: "Monday – Friday · 8:00am – 10:00pm",
     saturday: "Saturday · 9:00am – 8:00pm",

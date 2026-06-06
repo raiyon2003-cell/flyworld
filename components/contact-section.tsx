@@ -7,6 +7,7 @@ import { Loader2, Mail, MapPin, Phone, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { SITE } from "@/lib/site";
 
 export function ContactSection({ embedded = true }: { embedded?: boolean }) {
   const [pending, setPending] = React.useState(false);
@@ -62,7 +63,7 @@ export function ContactSection({ embedded = true }: { embedded?: boolean }) {
                 <p className="text-xs uppercase tracking-wide text-muted-foreground">
                   Support email
                 </p>
-                <p className="font-semibold">hello@flyworld.travel</p>
+                <p className="font-semibold">{SITE.email}</p>
                 <p className="text-xs text-muted-foreground">Response within 2 hours</p>
               </div>
             </div>
