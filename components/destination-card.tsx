@@ -60,7 +60,7 @@ export function DestinationCard({
             Round-trip estimates · Economy
           </p>
           <p className="mt-1 text-sm font-semibold">
-            Curated fares refreshed hourly (demo).
+            Curated fares refreshed hourly.
           </p>
         </div>
         <Button
@@ -87,7 +87,8 @@ function slugToAirport(slug: string): string {
     "new-york": "JFK",
     tokyo: "NRT",
     maldives: "MLE",
-    santorini: "JTR",
+    india: "DEL",
+    pakistan: "LHE",
     bangkok: "BKK",
     bali: "DPS",
   };

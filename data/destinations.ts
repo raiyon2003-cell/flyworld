@@ -26,12 +26,20 @@ export const DESTINATIONS: Destination[] = [
     priceFrom: 399,
   },
   {
-    slug: "santorini",
-    city: "Santorini",
-    country: "Greece",
+    slug: "india",
+    city: "India",
+    country: "India",
     image:
-      "https://images.unsplash.com/photo-1613395877344-13d4a8e0d325?w=900&q=80",
-    priceFrom: 459,
+      "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=900&q=80",
+    priceFrom: 350,
+  },
+  {
+    slug: "pakistan",
+    city: "Pakistan",
+    country: "Pakistan",
+    image:
+      "https://images.unsplash.com/photo-1684439061252-cb6632acb8ce?w=900&q=80",
+    priceFrom: 300,
   },
   {
     slug: "paris",
@@ -55,7 +63,7 @@ export const DESTINATIONS: Destination[] = [
     country: "Thailand",
     image:
       "https://images.unsplash.com/photo-1528183429752-a97d0bf99b5a?w=900&q=80",
-    priceFrom: 419,
+    priceFrom: 199,
   },
   {
     slug: "bali",

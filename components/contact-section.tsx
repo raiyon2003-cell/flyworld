@@ -90,8 +90,6 @@ export function ContactSection({ embedded = true }: { embedded?: boolean }) {
                   London (Head Office)
                 </p>
                 <p className="font-semibold">
-                  Travel Sun Ltd
-                  <br />
                   86-90 Paul Street
                   <br />
                   London, UK

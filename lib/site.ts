@@ -16,7 +16,7 @@ export const SITE = {
   offices: [
     {
       label: "London (Head Office)",
-      lines: ["Travel Sun Ltd", "86-90 Paul Street", "London, UK", "EC2A 4NE"],
+      lines: ["86-90 Paul Street", "London, UK", "EC2A 4NE"],
       hours: "Mon–Sat 9am–6pm",
     },
     {

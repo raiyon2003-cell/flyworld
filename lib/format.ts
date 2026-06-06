@@ -25,7 +25,7 @@ export function formatGbp(
 /** Alias for clarity in components that only need “a price string”. */
 export const formatPrice = formatGbp;
 
-/** “from £X pp” style for packages / destinations. */
+/** “from £X” style for packages / destinations. */
 export function formatGbpPp(amount: number): string {
-  return `${formatGbp(amount)} pp`;
+  return formatGbp(amount);
 }

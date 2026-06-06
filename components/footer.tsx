@@ -27,8 +27,6 @@ export function Footer() {
             protected packages, best price guarantee, and 24/7 UK expert support.
           </p>
           <p className="text-sm font-semibold text-foreground">
-            Travel Sun Ltd
-            <br />
             86-90 Paul Street
             <br />
             London, UK

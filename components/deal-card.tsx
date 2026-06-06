@@ -126,9 +126,6 @@ export function DealCard({
             </p>
             <p className="font-display text-3xl font-black tracking-tight text-white drop-shadow-sm">
               {formatGbp(deal.priceNow)}
-              <span className="ml-1 text-base font-semibold text-white/90">
-                / pp
-              </span>
             </p>
           </div>
           <Button
